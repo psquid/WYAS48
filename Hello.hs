@@ -2,9 +2,10 @@ module Main
     ( main
     ) where
 
-import System.Environment
+import System.IO
 
 main :: IO ()
 main = do
-    args <- getArgs
-    putStrLn ("Hello, " ++ args !! 0 ++ " " ++ args !! 1)
+    putStr "Enter name: " >> hFlush stdout
+    name <- getLine
+    putStrLn ("Hello, " ++ name)
